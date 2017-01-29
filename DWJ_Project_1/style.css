@@ -1,0 +1,658 @@
+/* ------------------ SUMMARY ------------------------ */
+
+/*
+
+- Line 23 :     Page entière
+- Line 65 :     Header
+- Line 124 :    Section "Accueil"
+- Line 250 :    Section "Services"
+- Line 293 :    Section "Portfolio"
+- Line 365 :    Section "Contact"
+- Line 415 :    Media Queries
+
+*/
+
+
+/*-----------------------------------------------------------------------*/
+
+                            /* PAGE ENTIERE */
+
+/*-----------------------------------------------------------------------*/
+
+
+body {
+    width: 100%;
+    margin: 0;
+}
+
+#page {
+    width: 95%;
+    height: auto;
+    margin: auto;
+}
+
+/* définition des ronds bleus pour les titres des sections */
+.rond {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    background-color: #25adb6;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    text-align: justify;
+}
+
+/* Permet de décaler la section "Accueil" pour ne pas être masquée par le menu fixe */
+#ancreAccueil {
+    height: 95px;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+                            /* HEADER */
+
+/*-----------------------------------------------------------------------*/
+
+
+/* ------------ Général ------------ */
+
+header {
+    width: 100%;
+    height: auto;
+    background-color: white;
+    position: fixed; /* on fixe le header en haut de la page */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+/* ------------ Gestion du logo ------------ */
+
+#logo {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#logo img {
+    width: 40%;
+    height: auto;
+}
+
+/* ------------ Gestion du menu ------------ */
+
+nav {
+    width: 100%;
+}
+
+nav ul {
+    width: 100%;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+}
+
+nav li {
+    width: 100%;
+    text-align: center;
+}
+
+nav li:hover {
+    border-bottom: 3px solid #25adb6;
+}
+
+nav a {
+    text-decoration: none;
+    color: #25adb6;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+                        /* SECTION ACCUEIL */
+
+/*-----------------------------------------------------------------------*/
+
+
+/* ------------ Général ------------ */
+
+#accueil {
+    width: 100%;
+}
+
+/* ------------ Gestion du slider ------------ */
+
+.slideshowGallery {
+    position: relative;
+    overflow: hidden;
+    height:   auto;
+    width: 100%;
+}
+
+.slideshowGallery .slider{
+    height:      100%;
+    white-space: nowrap;
+    font-size:   0;
+    transition:  0.8s;
+}
+
+.slideshowGallery .slider > *{ /* On superpose les images */
+    font-size:       1rem;
+    display:         inline-block;
+    vertical-align:  top;
+    height:          100%;
+    width:           100%;
+    background:      none 50% no-repeat;
+    background-size: cover;
+}
+
+.slideshowGallery .prevNext{ /* On positionne la div contenant les flèches directionnelles */
+    position: absolute;
+    z-index:  1;
+    top:      50%;
+    width:    110%;
+    height:   0;
+}
+
+.slideshowGallery .prevNext > div+div{
+    visibility: hidden;
+}
+
+.slideshowGallery .prevNext a{ /* On dessine les cercles englobant les flèches */
+    background:  #fff;
+    position:    absolute;
+    width:       40px;
+    height:      40px;
+    border-radius: 40px;
+    line-height: 40px;
+    text-align: center;
+    opacity:     0.3;
+    text-decoration:   none;
+    -webkit-transform: translateY( -50% );
+    transform: translateY( -50% ) translateX(-15px);
+
+}
+.slideshowGallery .prevNext a:hover{
+    opacity: 1;
+}
+
+.slideshowGallery .prevNext a+a{
+    right: 0;
+}
+
+.slideshowGallery >s:target ~ .prevNext >* {
+    visibility:  hidden;
+}
+
+#s1:target ~ .prevNext >*:nth-child(1){
+    visibility: visible;
+}
+
+#s2:target ~ .prevNext >*:nth-child(2){
+    visibility: visible;
+}
+
+#s1:target ~ .slider{
+    transform: translateX(   0%);
+    -webkit-transform: translateX(   0%);
+}
+
+#s2:target ~ .slider{
+    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+}
+
+/* ------------ Gestion du texte sur le slider ------------ */
+
+#texteAccueil {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 11%;
+    left: 0;
+    transform: scale(0.4) translateY(-25%) translateX(-30%);
+}
+
+#texteAccueil h1, h2, h3{
+    margin: 0;
+}
+
+#texteAccueil h1 {
+    color: #25adb6;
+    margin-bottom: 15px;
+}
+
+#texteAccueil h2, h3 {
+    color: white;
+}
+
+#texteAccueil button {
+    margin-top: 10px;
+    background-color: #25adb6;
+    color: white;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+                        /* SECTION SERVICES */
+
+/*-----------------------------------------------------------------------*/
+
+
+/* ------------ Général ------------ */
+
+#services {
+    width: 100%;
+
+}
+
+/* ------------ Gestion du titre ------------ */
+
+#titreServices div {
+    text-align: center;
+}
+
+/* ------------ Gestion de l'image ------------ */
+
+#imageServices {
+    width: 100%;
+}
+
+#imageServices img {
+    width: 100%;
+}
+
+/* ------------ Gestion des icônes ------------ */
+
+#detailServices img {
+    transform: scale(0.35);
+}
+
+/* ------------ Gestion du contenu ------------ */
+
+#contenuServices {
+    text-align: center;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+                        /* SECTION PORTFOLIO */
+
+/*-----------------------------------------------------------------------*/
+
+
+/* ------------ Général ------------ */
+
+#portfolio {
+    width: 100%;
+    background-color: #f5f5f5;
+}
+
+#enTetePorofolio, #tabPortfolio {
+    text-align: center;
+}
+
+#enTetePorofolio h1 {
+    padding-top: 5px;
+}
+
+/* ------------ Gestion du bandeau de tabulation ------------ */
+
+#tabPortfolio {
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+#tabPortfolio ul {
+    padding-left: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#tabPortfolio li {
+    display: inline-block;
+    height: 40px;
+    position: relative;
+}
+
+#tabPortfolio a {
+    display: block;
+    text-decoration: none;
+    height: 40px;
+}
+
+#tabPortfolio a:hover {
+    background-color: #25adb6;
+    color: white;
+}
+
+.fleche {
+    position: relative;
+    top: 14px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #25adb6;
+}
+
+/* ------------ Gestion des images du portfolio ------------ */
+
+#imagesPortfolio {
+    width: 100%;
+}
+
+#imagesPortfolio img {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+                        /* SECTION CONTACT */
+
+/*-----------------------------------------------------------------------*/
+
+
+/* ------------ Général ------------ */
+
+#contact {
+    width: 100%;
+
+}
+
+/* ------------ Gestion de la carte ------------ */
+
+iframe {
+    visibility: hidden;
+    height: 0;
+}
+
+/* ------------ Gestion du formulaire ------------ */
+
+#formulaireContact {
+    width: 100%;
+    height: auto;
+    background-color: rgb(245, 245 ,245);
+}
+
+#detailFormulaire {
+    width: 90%;
+    margin: auto;
+}
+
+#adresse p {
+    margin: 0;
+}
+
+#contact form {
+    margin-top: 10px;
+}
+
+#contact form > input{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.text {
+    width: 100%;
+}
+
+.bouton {
+    width: 25%;
+}
+
+#message {
+    height: 63px;
+}
+
+#btnValider {
+    background-color: #25adb6;
+}
+
+
+/*-----------------------------------------------------------------------*/
+
+                    /* MEDIA QUERIES : GESTION RESPONSIVE */
+
+/*-----------------------------------------------------------------------*/
+
+
+/* ------------ Gestion affichage Tablette ------------ */
+
+@media screen and (min-width: 768px){
+
+    #ancreAccueil {
+        height: 135px;
+    }
+
+    /* On réajuste taille + position du texte d'accueil */
+    #texteAccueil {
+        transform: scale(0.70) translateY(125%) translateX(-5%);
+    }
+
+    /* On repositionne les flèches directionnelles */
+    .slideshowGallery .prevNext{
+        position: absolute;
+        width:    104%;
+    }
+
+    /* On adapte les images du portfolio => 2 par ligne */
+    #imagesPortfolio {
+        text-align: center;
+    }
+
+    #imagesPortfolio img {
+        width: 48%;
+        display: inline-block;
+    }
+
+    #contact {
+        margin-top: 50px;
+    }
+
+    /* On repositionne le formulaire */
+    #formulaireContact {
+        width: 30%;
+        position: absolute;
+        top: 430%;
+        left: 60%;
+    }
+
+    /* On modifie la taille de la carte */
+    #contact iframe {
+        visibility: visible;
+        height: 450px;
+    }
+
+    /* On force l'affichage du formulaire ligne par ligne */
+    #contact form > input{
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+}
+
+/* ------------ Gestion affichage Laptop ------------ */
+
+@media screen and (min-width: 1024px){
+
+/* Pour le menu */
+
+    /* On affiche logo et menu sur une seule ligne */
+    header {
+        height: 100px;
+        width: 95%;
+        margin: auto;
+        right: 0;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    #logo {
+        width: 100%;
+        height: 75px;
+        text-align: left; /* on aligne le logo à gauche */
+    }
+
+    #logoImage {
+        margin-top: 20px;
+        margin-left: 15px;
+    }
+
+    nav {
+        width: 100%;
+        height: 75px;
+    }
+
+    nav ul {
+        height: 75px;
+        margin: 0;
+        display: flex; /* on dispose les éléments du menu en ligne */
+    }
+
+    nav li {
+        height: 17px;
+        margin-right: 20px;
+        margin-top: 50px;
+    }
+
+/* Pour la section "Accueil" */
+
+    /* On ré-ajuste taille et position du texte */
+    #texteAccueil {
+        width: 90%;
+        transform: scale(0.90) translateY(100%) translateX(5%);
+    }
+
+    /* On repositionne la flèche de droite */
+    .slideshowGallery .prevNext{
+        position: absolute;
+        width:    103%;
+    }
+
+/* Pour le section "Services" */
+
+    /* On dispose l'image et le détail en ligne */
+    #contenuServices {
+        display: flex;
+    }
+
+    .serv h1 {
+        text-align: left;
+    }
+
+    /* On positionne les icônes à mi-hauteur du descriptif correspondant */
+    #imageServices img{
+        position: relative;
+        top: 25%;
+    }
+
+    #service1, #service2, #service3 {
+        display: flex;
+    }
+
+    #portfolio {
+        margin-top: 30px;
+    }
+
+    #detailServices p {
+        text-align: left;
+    }
+
+/* Pour la section "Portfolio" */
+
+    #contact {
+        margin-top: 95px;
+    }
+
+    #imagesPortfolio {
+        text-align: center;
+    }
+
+    /* On dispose les images => 4 par ligne */
+    #imagesPortfolio img {
+        width: 24%;
+        display: inline-block;
+    }
+
+    #contact iframe {
+        visibility: visible;
+        height: 550px;
+    }
+
+    #formulaireContact {
+        width: 30%;
+        position: absolute;
+        top: 248%;
+        left: 60%;
+    }
+}
+
+/* ------------ Gestion affichage Laptop Large ------------ */
+
+@media screen and (min-width: 1440px){
+
+    #texteAccueil {
+        width: 90%;
+        transform: translateY(150%) translateX(10%);
+    }
+
+    .slideshowGallery .prevNext{
+        position: absolute;
+        width:    102%;
+    }
+
+    #contenuServices {
+        display: flex;
+    }
+
+    #imageServices img {
+        transform: scale(0.8);
+        position: relative;
+        top: 5%;
+    }
+
+    #detailServices {
+        margin-top: auto;
+        margin-bottom: auto;
+    }
+
+    #service1, #service2, #service3 {
+        display: flex;
+    }
+
+    .serv h1 {
+        text-align: left;
+    }
+
+    #imagesPortfolio {
+        text-align: center;
+    }
+
+    #contact iframe {
+        visibility: visible;
+        height: 600px;
+    }
+
+    #formulaireContact {
+        width: 25%;
+        position: absolute;
+        top: 231%;
+        left: 60%;
+        height: 400px;
+    }
+
+    #detailFormulaire {
+        height: 100%;
+    }
+}
+

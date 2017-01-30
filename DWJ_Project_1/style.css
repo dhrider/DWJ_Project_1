@@ -320,6 +320,7 @@ nav a {
     display: inline-block;
     height: 40px;
     position: relative;
+    vertical-align: middle;
 }
 
 #tabPortfolio a {
@@ -339,6 +340,19 @@ nav a {
     border-left: 15px solid transparent;
     border-right: 15px solid transparent;
     border-top: 15px solid #25adb6;
+    visibility: hidden;
+}
+
+#tabPortfolio a:hover + #flecheAll {
+    visibility: visible;
+}
+
+#tabPortfolio a:hover + #flecheCreative {
+    visibility: visible;
+}
+
+#tabPortfolio a:hover + #flecheCorporate {
+    visibility: visible;
 }
 
 /* ------------ Gestion des images du portfolio ------------ */
@@ -372,9 +386,10 @@ nav a {
 
 /* ------------ Gestion de la carte ------------ */
 
-iframe {
-    visibility: hidden;
-    height: 0;
+#contact img {
+    width: 100%;
+    height: auto;
+    margin-top: 15px;
 }
 
 /* ------------ Gestion du formulaire ------------ */
@@ -462,20 +477,13 @@ iframe {
 
     #contact {
         margin-top: 50px;
+        height: 500px;
     }
 
     /* On repositionne le formulaire */
     #formulaireContact {
         width: 30%;
-        position: absolute;
-        top: 447%;
-        left: 60%;
-    }
-
-    /* On modifie la taille de la carte */
-    #contact iframe {
-        visibility: visible;
-        height: 450px;
+        transform: translateX(160%) translateY(-130%);
     }
 
     /* On force l'affichage du formulaire ligne par ligne */
@@ -589,16 +597,9 @@ iframe {
         display: inline-block;
     }
 
-    #contact iframe {
-        visibility: visible;
-        height: 550px;
-    }
-
     #formulaireContact {
         width: 30%;
-        position: absolute;
-        top: 249%;
-        left: 60%;
+        transform: translateX(160%) translateY(-130%);
     }
 }
 
@@ -643,17 +644,9 @@ iframe {
         text-align: center;
     }
 
-    #contact iframe {
-        visibility: visible;
-        height: 600px;
-    }
-
     #formulaireContact {
-        width: 25%;
-        position: absolute;
-        top: 231%;
-        left: 60%;
-        height: 400px;
+        width: 30%;
+        transform: translateX(160%) translateY(-170%);
     }
 
     #detailFormulaire {

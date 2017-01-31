@@ -319,14 +319,15 @@ nav a {
 #tabPortfolio li {
     display: inline-block;
     height: 40px;
+    width: 70px;
     position: relative;
-    vertical-align: middle;
 }
 
 #tabPortfolio a {
     display: block;
     text-decoration: none;
     height: 40px;
+    padding-top: 25%;
 }
 
 #tabPortfolio a:hover {

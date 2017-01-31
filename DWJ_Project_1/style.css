@@ -360,6 +360,7 @@ nav a {
 
 #imagesPortfolio {
     width: 100%;
+    position: relative;
 }
 
 .imagePortfolio {
@@ -368,12 +369,23 @@ nav a {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
 }
 
 .imagePortfolio img {
     width: 100%;
     height: auto;
 }
+
+.legendePortfolio {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: rgba(245, 245, 245, 0.6);
+}
+
 
 
 /*-----------------------------------------------------------------------*/

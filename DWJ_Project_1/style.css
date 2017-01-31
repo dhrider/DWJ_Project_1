@@ -362,12 +362,17 @@ nav a {
     width: 100%;
 }
 
-#imagesPortfolio img {
-    width: 90%;
+.imagePortfolio {
+    width: 100%;
     height: auto;
     display: block;
     margin-left: auto;
     margin-right: auto;
+}
+
+.imagePortfolio img {
+    width: 100%;
+    height: auto;
 }
 
 
@@ -467,7 +472,7 @@ nav a {
         text-align: center;
     }
 
-    #imagesPortfolio img {
+    .imagePortfolio {
         width: 48%;
         display: inline-block;
     }
@@ -593,7 +598,7 @@ nav a {
     }
 
     /* On dispose les images => 4 par ligne */
-    #imagesPortfolio img {
+    .imagePortfolio {
         width: 24%;
         display: inline-block;
     }

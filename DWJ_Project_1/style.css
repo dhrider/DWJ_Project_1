@@ -407,19 +407,7 @@ nav a {
 }
 
 /* */
-#ancreCreative:target ~ #imagesPortfolio > #image1 > #image1Legende {
-    visibility: visible;
-}
-
-#ancreCreative:target ~ #imagesPortfolio > #image2 > #image2Legende {
-    visibility: visible;
-}
-
-#ancreCreative:target ~ #imagesPortfolio > #image3 > #image3Legende {
-    visibility: visible;
-}
-
-#ancreCreative:target ~ #imagesPortfolio > #image7 > #image7Legende {
+#ancreCreative:target ~ #imagesPortfolio > * .creative{
     visibility: visible;
 }
 
@@ -428,19 +416,7 @@ nav a {
 }
 
 /* */
-#ancreCorporate:target ~#imagesPortfolio > #image4 > #image4Legende {
-    visibility: visible;
-}
-
-#ancreCorporate:target ~#imagesPortfolio > #image5 > #image5Legende {
-    visibility: visible;
-}
-
-#ancreCorporate:target ~#imagesPortfolio > #image6 > #image6Legende {
-    visibility: visible;
-}
-
-#ancreCorporate:target ~#imagesPortfolio > #image8 > #image8Legende {
+#ancreCorporate:target ~#imagesPortfolio > * .corporate {
     visibility: visible;
 }
 

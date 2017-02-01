@@ -157,11 +157,11 @@ nav a {
     height:   0;
 }
 
-.slideshowGallery .prevNext > div+div{
+.slideshowGallery .prevNext > div + div {
     visibility: hidden;
 }
 
-.slideshowGallery .prevNext a{ /* On dessine les cercles englobant les flèches */
+.slideshowGallery .prevNext a { /* On dessine les cercles englobant les flèches */
     background:  #fff;
     position:    absolute;
     width:       40px;
@@ -176,32 +176,33 @@ nav a {
     transform: translateY( -50% ) translateX(-15px);
 
 }
-.slideshowGallery .prevNext a:hover{
+
+.slideshowGallery .prevNext a:hover {
     opacity: 1;
 }
 
-.slideshowGallery .prevNext a+a{
+.slideshowGallery .prevNext a + a {
     right: 0;
 }
 
-.slideshowGallery >s:target ~ .prevNext >* {
+.slideshowGallery > s:target ~ .prevNext > * {
     visibility:  hidden;
 }
 
-#s1:target ~ .prevNext >*:nth-child(1){
+#s1:target ~ .prevNext > *:nth-child(1){
     visibility: visible;
 }
 
-#s2:target ~ .prevNext >*:nth-child(2){
+#s2:target ~ .prevNext > *:nth-child(2){
     visibility: visible;
 }
 
-#s1:target ~ .slider{
-    transform: translateX(   0%);
-    -webkit-transform: translateX(   0%);
+#s1:target ~ .slider {
+    transform: translateX(0%);
+    -webkit-transform: translateX(0%);
 }
 
-#s2:target ~ .slider{
+#s2:target ~ .slider {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
 }
@@ -217,7 +218,7 @@ nav a {
     transform: scale(0.4) translateY(-25%) translateX(-30%);
 }
 
-#texteAccueil h1, h2, h3{
+#texteAccueil h1, h2, h3 {
     margin: 0;
 }
 
@@ -363,7 +364,7 @@ nav a {
     position: relative;
 }
 
-.imagePortfolio {
+.imagePortfolio { /* Par défaut les images sont placées en colonne */
     width: 100%;
     height: auto;
     display: block;
@@ -397,7 +398,7 @@ nav a {
     visibility: visible;
 }
 
-/* */
+/* Affichage des légendes de toutes les images quand on click sur "All Works" */
 #ancreAllWorks:target ~ #imagesPortfolio > * .legendePortfolio {
     visibility: visible;
 }
@@ -406,7 +407,12 @@ nav a {
     visibility: visible;
 }
 
-/* */
+#ancreAllWorks:target ~ #tabPortfolio > ul > li > #tab1 {
+    background-color: #25adb6;
+    color: white;
+}
+
+/* Affichage des légendes concernées par le click sur "Creative" */
 #ancreCreative:target ~ #imagesPortfolio > * .creative{
     visibility: visible;
 }
@@ -415,13 +421,23 @@ nav a {
     visibility: visible;
 }
 
-/* */
+#ancreCreative:target ~ #tabPortfolio > ul > li > #tab2 {
+    background-color: #25adb6;
+    color: white;
+}
+
+/* Affichage des légendes concernées par le click sur "Corporate" */
 #ancreCorporate:target ~#imagesPortfolio > * .corporate {
     visibility: visible;
 }
 
 #ancreCorporate:target ~ #tabPortfolio a + #flecheCorporate {
     visibility: visible;
+}
+
+#ancreCorporate:target ~ #tabPortfolio > ul > li > #tab3 {
+    background-color: #25adb6;
+    color: white;
 }
 
 /*-----------------------------------------------------------------------*/
@@ -435,12 +451,12 @@ nav a {
 
 #contact {
     width: 100%;
-
+    height: auto;
 }
 
 /* ------------ Gestion de la carte ------------ */
 
-#contact img {
+#carte img {
     width: 100%;
     height: auto;
     margin-top: 15px;
@@ -535,9 +551,23 @@ nav a {
     }
 
     /* On repositionne le formulaire */
+
+    #contact {
+        position: relative;
+    }
+
+    #carte {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
     #formulaireContact {
+        position: absolute;
+        top: 15px;
+        left: 60%;
         width: 30%;
-        transform: translateX(160%) translateY(-130%);
+        height: 80%;
     }
 
     /* On force l'affichage du formulaire ligne par ligne */
@@ -651,9 +681,22 @@ nav a {
         display: inline-block;
     }
 
+    #contact {
+        position: relative;
+    }
+
+    #carte {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
     #formulaireContact {
+        position: absolute;
+        top: 15px;
+        left: 60%;
         width: 30%;
-        transform: translateX(160%) translateY(-130%);
+        height: 80%;
     }
 }
 
@@ -698,13 +741,22 @@ nav a {
         text-align: center;
     }
 
-    #formulaireContact {
-        width: 30%;
-        transform: translateX(160%) translateY(-170%);
+    #contact {
+        position: relative;
     }
 
-    #detailFormulaire {
-        height: 100%;
+    #carte {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    #formulaireContact {
+        position: absolute;
+        top: 15px;
+        left: 60%;
+        width: 30%;
+        height: 80%;
     }
 }
 

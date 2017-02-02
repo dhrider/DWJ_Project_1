@@ -3,12 +3,12 @@
 /*
 
 - Line 23 :     Page entière
-- Line 65 :     Header
-- Line 124 :    Section "Accueil"
-- Line 250 :    Section "Services"
-- Line 293 :    Section "Portfolio"
-- Line 365 :    Section "Contact"
-- Line 415 :    Media Queries
+- Line 63 :     Header
+- Line 122 :    Section "Accueil"
+- Line 259 :    Section "Services"
+- Line 303 :    Section "Portfolio"
+- Line 471 :    Section "Contact"
+- Line 536 :    Media Queries
 
 */
 
@@ -139,7 +139,8 @@ nav a {
     transition:  0.8s;
 }
 
-.slideshowGallery .slider > *{ /* On superpose les images */
+/* On superpose les images */
+.slideshowGallery .slider > *{
     font-size:       1rem;
     display:         inline-block;
     vertical-align:  top;
@@ -149,7 +150,8 @@ nav a {
     background-size: cover;
 }
 
-.slideshowGallery .prevNext{ /* On positionne la div contenant les flèches directionnelles */
+/* On positionne la div contenant les flèches directionnelles */
+.slideshowGallery .prevNext{
     position: absolute;
     z-index:  1;
     top:      50%;
@@ -157,11 +159,13 @@ nav a {
     height:   0;
 }
 
+/* on cache les flêches par défaut*/
 .slideshowGallery .prevNext > div + div {
     visibility: hidden;
 }
 
-.slideshowGallery .prevNext a { /* On dessine les cercles englobant les flèches */
+/* On dessine les cercles englobant les flèches */
+.slideshowGallery .prevNext a {
     background:  #fff;
     position:    absolute;
     width:       40px;
@@ -172,8 +176,8 @@ nav a {
     font-size: 2em;
     opacity:     0.3;
     text-decoration:   none;
-    -webkit-transform: translateY( -50% );
     transform: translateY( -50% ) translateX(-15px);
+    -webkit-transform: translateY( -50% ) translateX(-15px);
 
 }
 
@@ -181,6 +185,7 @@ nav a {
     opacity: 1;
 }
 
+/* Positionnement des flêches de chaque côté */
 .slideshowGallery .prevNext a + a {
     right: 0;
 }
@@ -193,15 +198,17 @@ nav a {
     visibility: visible;
 }
 
-#s2:target ~ .prevNext > *:nth-child(2){
-    visibility: visible;
-}
-
+/* On revient sur la 1ère image */
 #s1:target ~ .slider {
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
 }
 
+#s2:target ~ .prevNext > *:nth-child(2){
+    visibility: visible;
+}
+
+/* on déplace pour afficher la 2ème image */
 #s2:target ~ .slider {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
@@ -209,6 +216,7 @@ nav a {
 
 /* ------------ Gestion du texte sur le slider ------------ */
 
+/* On positionne le texte sur l'imaga d'accueil*/
 #texteAccueil {
     width: 100%;
     height: auto;
@@ -216,6 +224,7 @@ nav a {
     top: 11%;
     left: 0;
     transform: scale(0.4) translateY(-25%) translateX(-30%);
+    -webkit-transform: scale(0.4) translateY(-25%) translateX(-30%);
 }
 
 #texteAccueil h1, h2, h3 {
@@ -254,7 +263,7 @@ nav a {
 
 /* ------------ Gestion du titre ------------ */
 
-#titreServices div {
+#titreServices {
     text-align: center;
 }
 
@@ -271,7 +280,8 @@ nav a {
 /* ------------ Gestion des icônes ------------ */
 
 #detailServices img {
-    transform: scale(0.35);
+    transform: scale(0.30);
+    -webkit-transform: scale(0.30);
 }
 
 /* ------------ Gestion du contenu ------------ */
@@ -336,6 +346,7 @@ nav a {
     color: white;
 }
 
+/*On dessine les flêches des tabulations et on les masque par défaut*/
 .fleche {
     position: relative;
     top: 14px;
@@ -345,14 +356,17 @@ nav a {
     visibility: hidden;
 }
 
+/* On affiche la flèche correspondant à la tabulation */
 #tabPortfolio a:hover + #flecheAll {
     visibility: visible;
 }
 
+/* idem */
 #tabPortfolio a:hover + #flecheCreative {
     visibility: visible;
 }
 
+/* idem */
 #tabPortfolio a:hover + #flecheCorporate {
     visibility: visible;
 }
@@ -364,7 +378,8 @@ nav a {
     position: relative;
 }
 
-.imagePortfolio { /* Par défaut les images sont placées en colonne */
+/* Par défaut les images sont placées en colonne */
+.imagePortfolio {
     width: 100%;
     height: auto;
     display: block;
@@ -378,6 +393,7 @@ nav a {
     height: auto;
 }
 
+/* Positionnement des légendes au bord inférieur des images */
 .legendePortfolio {
     position: absolute;
     bottom: 0;
@@ -394,6 +410,7 @@ nav a {
     margin-left: 5px;
 }
 
+/* On affiche la légende correspondant à l'image au survol de celle-ci*/
 .imagePortfolio img:hover + .legendePortfolio {
     visibility: visible;
 }
@@ -403,10 +420,12 @@ nav a {
     visibility: visible;
 }
 
+/* Affiche de la flèche */
 #ancreAllWorks:target ~ #tabPortfolio a + #flecheAll {
     visibility: visible;
 }
 
+/* Affichage du cadre autour de la tabulation  */
 #ancreAllWorks:target ~ #tabPortfolio > ul > li > #tab1 {
     background-color: #25adb6;
     color: white;
@@ -523,6 +542,7 @@ nav a {
     /* On réajuste taille + position du texte d'accueil */
     #texteAccueil {
         transform: scale(0.70) translateY(125%) translateX(-5%);
+        -webkit-transform: scale(0.70) translateY(125%) translateX(-5%);
     }
 
     /* On repositionne les flèches directionnelles */
@@ -531,11 +551,11 @@ nav a {
         width:    104%;
     }
 
-    /* On adapte les images du portfolio => 2 par ligne */
     #imagesPortfolio {
         text-align: center;
     }
 
+    /* On adapte les images du portfolio => 2 par ligne */
     .imagePortfolio {
         width: 48%;
         display: inline-block;
@@ -628,6 +648,7 @@ nav a {
     #texteAccueil {
         width: 90%;
         transform: scale(0.90) translateY(100%) translateX(5%);
+        -webkit-transform: scale(0.90) translateY(100%) translateX(5%);
     }
 
     /* On repositionne la flèche de droite */
@@ -695,7 +716,7 @@ nav a {
         position: absolute;
         top: 15px;
         left: 60%;
-        width: 30%;
+        width: 25%;
         height: 80%;
     }
 }
@@ -707,6 +728,7 @@ nav a {
     #texteAccueil {
         width: 90%;
         transform: translateY(150%) translateX(10%);
+        -webkit-transform: translateY(150%) translateX(10%);
     }
 
     .slideshowGallery .prevNext{
@@ -751,11 +773,15 @@ nav a {
         height: auto;
     }
 
+    #carte img {
+        margin-top: 0;
+    }
+
     #formulaireContact {
         position: absolute;
-        top: 15px;
+        top: 0;
         left: 60%;
-        width: 30%;
+        width: 20%;
         height: 80%;
     }
 }

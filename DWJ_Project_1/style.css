@@ -3,12 +3,12 @@
 /*
 
 - Line 23 :     Page entière
-- Line 63 :     Header
-- Line 122 :    Section "Accueil"
-- Line 259 :    Section "Services"
-- Line 303 :    Section "Portfolio"
-- Line 471 :    Section "Contact"
-- Line 536 :    Media Queries
+- Line 65 :     Header
+- Line 124 :    Section "Accueil"
+- Line 264 :    Section "Services"
+- Line 306 :    Section "Portfolio"
+- Line 529 :    Section "Contact"
+- Line 594 :    Media Queries
 
 */
 
@@ -35,10 +35,12 @@ body {
 .rond {
     width: 15px;
     height: 15px;
-    border-radius: 15px;
     background-color: #25adb6;
     margin-left: auto;
     margin-right: auto;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
 }
 
 p {
@@ -47,7 +49,7 @@ p {
 
 /* Permet de décaler la section "Accueil" pour ne pas être masquée par le menu fixe */
 #ancreAccueil {
-    height: 95px;
+    height: 96px;
 }
 
 
@@ -176,9 +178,11 @@ nav a {
     font-size: 2em;
     opacity:     0.3;
     text-decoration:   none;
-    transform: translateY( -50% ) translateX(-15px);
-    -webkit-transform: translateY( -50% ) translateX(-15px);
-
+    transform: translateY(-50%) translateX(-15px);
+    -webkit-transform: translateY(-50%) translateX(-15px);
+    -moz-transform: translateY(-50%) translateX(-15px);
+    -o-transform: translateY(-50%) translateX(-15px);
+    -ms-transform: translateY(-50%) translateX(-15px);
 }
 
 .slideshowGallery .prevNext a:hover {
@@ -190,7 +194,7 @@ nav a {
     right: 0;
 }
 
-.slideshowGallery > s:target ~ .prevNext > * {
+.slideshowGallery > .ancreSlider:target ~ .prevNext > * {
     visibility:  hidden;
 }
 
@@ -202,6 +206,9 @@ nav a {
 #s1:target ~ .slider {
     transform: translateX(0%);
     -webkit-transform: translateX(0%);
+    -moz-transform: translateX(0%);
+    -o-transform: translateX(0%);
+    -ms-transform: translateX(0%);
 }
 
 #s2:target ~ .prevNext > *:nth-child(2){
@@ -212,6 +219,43 @@ nav a {
 #s2:target ~ .slider {
     transform: translateX(-100%);
     -webkit-transform: translateX(-100%);
+    -moz-transform: translateX(-100%);
+    -o-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+}
+
+/* Permet d'empêcher le slider de remonter quand on clique sue les flêches */
+
+/* Pour la 1ère image */
+
+/* On donne une hauteur à la div servant d'ancre */
+#s1:target{
+    height: 96px;
+}
+
+/* On décale les flêches*/
+#s1:target ~ .prevNext {
+    margin-top: 48px;
+}
+
+/* On décale le texte */
+#s1:target ~ #texteAccueil {
+    margin-top: 36.5%;
+}
+
+/* Pour la 2ème image */
+
+/* Idem 1ère image */
+#s2:target {
+    height: 96px;
+}
+
+#s2:target ~ .prevNext {
+    margin-top: 48px;
+}
+
+#s2:target ~ #texteAccueil {
+    margin-top: 36.5%;
 }
 
 /* ------------ Gestion du texte sur le slider ------------ */
@@ -221,10 +265,13 @@ nav a {
     width: 100%;
     height: auto;
     position: absolute;
-    top: 11%;
+    top: -15%;
     left: 0;
-    transform: scale(0.4) translateY(-25%) translateX(-30%);
-    -webkit-transform: scale(0.4) translateY(-25%) translateX(-30%);
+    transform: scale(0.4) translateY(-25%) translateX(-40%);
+    -webkit-transform: scale(0.4) translateY(-25%) translateX(-40%);
+    -moz-transform: scale(0.4) translateY(-25%) translateX(-40%);
+    -o-transform: scale(0.4) translateY(-25%) translateX(-40%);
+    -ms-transform: scale(0.4) translateY(-25%) translateX(-40%);
 }
 
 #texteAccueil h1, h2, h3 {
@@ -258,7 +305,6 @@ nav a {
 
 #services {
     width: 100%;
-
 }
 
 /* ------------ Gestion du titre ------------ */
@@ -282,6 +328,9 @@ nav a {
 #detailServices img {
     transform: scale(0.30);
     -webkit-transform: scale(0.30);
+    -moz-transform: scale(0.30);
+    -o-transform: scale(0.30);
+    -ms-transform: scale(0.30);
 }
 
 /* ------------ Gestion du contenu ------------ */
@@ -404,6 +453,7 @@ nav a {
     visibility: hidden;
 }
 
+/* Alignement et couleur du texte des légendes */
 .legendePortfolio > * {
     text-align: left;
     color: white;
@@ -431,29 +481,37 @@ nav a {
     color: white;
 }
 
-/* Affichage des légendes concernées par le click sur "Creative" */
+/* Affichage après click sur "Creative" */
+
+/* On affiche les légendes de la classe "creative" */
 #ancreCreative:target ~ #imagesPortfolio > * .creative{
     visibility: visible;
 }
 
+/* On affiche la flêche sous la tabulation "créative" */
 #ancreCreative:target ~ #tabPortfolio a + #flecheCreative {
     visibility: visible;
 }
 
+/* On colore la tabulation "créative" */
 #ancreCreative:target ~ #tabPortfolio > ul > li > #tab2 {
     background-color: #25adb6;
     color: white;
 }
 
-/* Affichage des légendes concernées par le click sur "Corporate" */
+/* Affichage après click sur "Corporate" */
+
+/* On affiche les légendes de la classe "corporate" */
 #ancreCorporate:target ~#imagesPortfolio > * .corporate {
     visibility: visible;
 }
 
+/* On affiche la flêche sous la tabulation "corporate" */
 #ancreCorporate:target ~ #tabPortfolio a + #flecheCorporate {
     visibility: visible;
 }
 
+/* On colore la tabulation "corporate" */
 #ancreCorporate:target ~ #tabPortfolio > ul > li > #tab3 {
     background-color: #25adb6;
     color: white;
@@ -535,14 +593,45 @@ nav a {
 
 @media screen and (min-width: 768px){
 
+    /* Réajustement de la position du slider + flêches + texte d'accueil */
+
+    /* Début */
     #ancreAccueil {
         height: 135px;
     }
 
+    #s1:target{
+        height: 136px;
+    }
+
+    #s1:target ~ .prevNext {
+        margin-top: 68px;
+    }
+
+    #s1:target ~ #texteAccueil {
+        margin-top: 21.5%;
+    }
+
+    #s2:target {
+        height: 136px;
+    }
+
+    #s2:target ~ .prevNext {
+        margin-top: 68px;
+    }
+
+    #s2:target ~ #texteAccueil {
+        margin-top: 21.5%;
+    }
+    /* Fin */
+
     /* On réajuste taille + position du texte d'accueil */
     #texteAccueil {
-        transform: scale(0.70) translateY(125%) translateX(-5%);
-        -webkit-transform: scale(0.70) translateY(125%) translateX(-5%);
+        transform: scale(0.70) translateY(123%) translateX(-5%);
+        -webkit-transform: scale(0.70) translateY(123%) translateX(-5%);
+        -moz-transform: scale(0.70) translateY(123%) translateX(-5%);
+        -o-transform: scale(0.70) translateY(123%) translateX(-5%);
+        -ms-transform: scale(0.70) translateY(123%) translateX(-5%);
     }
 
     /* On repositionne les flèches directionnelles */
@@ -644,11 +733,42 @@ nav a {
 
 /* Pour la section "Accueil" */
 
+    /* Réajustement de la position du slider + flêches + texte d'accueil */
+
+    /* Début */
+    #s1:target{
+        height: 136px;
+    }
+
+    #s1:target ~ .prevNext {
+        margin-top: 68px;
+    }
+
+    #s1:target ~ #texteAccueil {
+        margin-top: 16%;
+    }
+
+    #s2:target {
+        height: 136px;
+    }
+
+    #s2:target ~ .prevNext {
+        margin-top: 68px;
+    }
+
+    #s2:target ~ #texteAccueil {
+        margin-top: 16%;
+    }
+    /* Fin */
+
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {
         width: 90%;
-        transform: scale(0.90) translateY(100%) translateX(5%);
-        -webkit-transform: scale(0.90) translateY(100%) translateX(5%);
+        transform: scale(0.90) translateY(145%) translateX(5%);
+        -webkit-transform: scale(0.90) translateY(145%) translateX(5%);
+        -moz-transform: scale(0.90) translateY(145%) translateX(5%);
+        -o-transform: scale(0.90) translateY(145%) translateX(5%);
+        -ms-transform: scale(0.90) translateY(145%) translateX(5%);
     }
 
     /* On repositionne la flèche de droite */
@@ -724,13 +844,45 @@ nav a {
 /* ------------ Gestion affichage Laptop Large ------------ */
 
 @media screen and (min-width: 1440px){
+    /* Réajustement de la position du slider + flêches + texte d'accueil */
 
-    #texteAccueil {
-        width: 90%;
-        transform: translateY(150%) translateX(10%);
-        -webkit-transform: translateY(150%) translateX(10%);
+    /* Début */
+    #s1:target{
+        height: 136px;
     }
 
+    #s1:target ~ .prevNext {
+        margin-top: 68px;
+    }
+
+    #s1:target ~ #texteAccueil {
+        margin-top: 11.5%;
+    }
+
+    #s2:target {
+        height: 136px;
+    }
+
+    #s2:target ~ .prevNext {
+        margin-top: 68px;
+    }
+
+    #s2:target ~ #texteAccueil {
+        margin-top: 11.5%;
+    }
+    /* Fin */
+
+    /* On ré-ajuste taille et position du texte */
+    #texteAccueil {
+        width: 90%;
+        transform: translateY(202%) translateX(10%);
+        -webkit-transform: translateY(202%) translateX(10%);
+        -moz-transform: translateY(202%) translateX(10%);
+        -o-transform: translateY(202%) translateX(10%);
+        -ms-transform: translateY(202%) translateX(10%);
+    }
+
+    /*Ecartement des flêches */
     .slideshowGallery .prevNext{
         position: absolute;
         width:    102%;
@@ -740,6 +892,7 @@ nav a {
         display: flex;
     }
 
+    /* On réajuste les images des "Services" */
     #imageServices img {
         transform: scale(0.8);
         position: relative;

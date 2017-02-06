@@ -3,12 +3,12 @@
 /*
 
 - Line 23 :     Page entière
-- Line 65 :     Header
-- Line 124 :    Section "Accueil"
-- Line 264 :    Section "Services"
-- Line 306 :    Section "Portfolio"
-- Line 529 :    Section "Contact"
-- Line 594 :    Media Queries
+- Line 61 :     Header
+- Line 120 :    Section "Accueil"
+- Line 260 :    Section "Services"
+- Line 349 :    Section "Portfolio"
+- Line 526 :    Section "Contact"
+- Line 591 :    Media Queries
 
 */
 
@@ -41,10 +41,6 @@ body {
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
-}
-
-p {
-    text-align: justify;
 }
 
 /* Permet de décaler la section "Accueil" pour ne pas être masquée par le menu fixe */
@@ -326,6 +322,7 @@ nav a {
 /* ------------ Gestion des icônes ------------ */
 
 #detailServices img {
+    height: 100%;
     transform: scale(0.30);
     -webkit-transform: scale(0.30);
     -moz-transform: scale(0.30);

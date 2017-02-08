@@ -309,6 +309,10 @@ nav a {
     text-align: center;
 }
 
+#titreServices p {
+    text-align: justify;
+}
+
 /* ------------ Gestion de l'image ------------ */
 
 #imageServices {
@@ -332,10 +336,13 @@ nav a {
 
 /* ------------ Gestion du contenu ------------ */
 
-#contenuServices {
+#detailServices {
     text-align: center;
 }
 
+#detailServices p {
+    text-align: justify;
+}
 
 /*-----------------------------------------------------------------------*/
 
@@ -353,6 +360,10 @@ nav a {
 
 #enTetePorofolio, #tabPortfolio {
     text-align: center;
+}
+
+#enTetePorofolio p {
+    text-align: justify;
 }
 
 #enTetePorofolio h1 {
@@ -638,6 +649,18 @@ nav a {
         width:    104%;
     }
 
+    #titreServices p {
+        text-align: center;
+    }
+
+    #detailServices p {
+        text-align: center;
+    }
+
+    #enTetePorofolio p {
+        text-align: center;
+    }
+
     #imagesPortfolio {
         text-align: center;
     }
@@ -782,7 +805,7 @@ nav a {
         display: flex;
     }
 
-    .serv h1 {
+    #detailServices h1 {
         text-align: left;
     }
 
@@ -801,7 +824,7 @@ nav a {
     }
 
     #detailServices p {
-        text-align: left;
+        text-align: justify;
     }
 
 /* Pour la section "Portfolio" */
@@ -908,6 +931,10 @@ nav a {
 
     .serv h1 {
         text-align: left;
+    }
+
+    #detailServices p {
+        text-align: justify;
     }
 
     #imagesPortfolio {

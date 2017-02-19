@@ -477,12 +477,12 @@ nav a {
     }
 
     /* on cache les flêches par défaut*/
-    .slideshowGallery .prevNext > div + div {
+    .slideshowGallery .prevNext > div {
         visibility: hidden;
     }
 
     /* On dessine les cercles englobant les flèches */
-    .slideshowGallery .prevNext a {
+    .slideshowGallery .prevNext label {
         background:  #fff;
         position:    absolute;
         width:       40px;
@@ -500,12 +500,12 @@ nav a {
         -ms-transform: translateY(-50%) translateX(-15px);
     }
 
-    .slideshowGallery .prevNext a:hover {
+    .slideshowGallery .prevNext label:hover {
         opacity: 1;
     }
 
     /* Positionnement des flêches de chaque côté */
-    .slideshowGallery .prevNext a + a {
+    .slideshowGallery .prevNext label + label {
         right: 0;
     }
 
@@ -513,25 +513,11 @@ nav a {
         visibility:  hidden;
     }
 
-    #s1:target ~ .prevNext > *:nth-child(1){
-        visibility: visible;
+    #btn {
+        display: none;
     }
 
-    /* On revient sur la 1ère image */
-    #s1:target ~ .slider {
-        transform: translateX(0%);
-        -webkit-transform: translateX(0%);
-        -moz-transform: translateX(0%);
-        -o-transform: translateX(0%);
-        -ms-transform: translateX(0%);
-    }
-
-    #s2:target ~ .prevNext > *:nth-child(2){
-        visibility: visible;
-    }
-
-    /* on déplace pour afficher la 2ème image */
-    #s2:target ~ .slider {
+    input[type=checkbox]:checked ~ .slider {
         transform: translateX(-100%);
         -webkit-transform: translateX(-100%);
         -moz-transform: translateX(-100%);
@@ -539,71 +525,13 @@ nav a {
         -ms-transform: translateX(-100%);
     }
 
-    /* Permet d'empêcher le slider de remonter quand on clique sue les flêches */
 
-    /* Pour la 1ère image */
 
-    /* On donne une hauteur à la div servant d'ancre */
-    #s1:target{
-        height: 96px;
-    }
+    /* Réajustement de la position du slider + flêches + texte d'accueil */
 
-    /* On décale les flêches*/
-    #s1:target ~ .prevNext {
-        margin-top: 48px;
-    }
-
-    /* On décale le texte */
-    #s1:target ~ #texteAccueil {
-        margin-top: 36.5%;
-    }
-
-    /* Pour la 2ème image */
-
-    /* Idem 1ère image */
-    #s2:target {
-        height: 96px;
-    }
-
-    #s2:target ~ .prevNext {
-        margin-top: 48px;
-    }
-
-    #s2:target ~ #texteAccueil {
-        margin-top: 36.5%;
-    }
-
-        /* Réajustement de la position du slider + flêches + texte d'accueil */
-
-    /* Début */
     #ancreAccueil {
         height: 135px;
     }
-
-    #s1:target{
-        height: 136px;
-    }
-
-    #s1:target ~ .prevNext {
-        margin-top: 68px;
-    }
-
-    #s1:target ~ #texteAccueil {
-        margin-top: 21.5%;
-    }
-
-    #s2:target {
-        height: 136px;
-    }
-
-    #s2:target ~ .prevNext {
-        margin-top: 68px;
-    }
-
-    #s2:target ~ #texteAccueil {
-        margin-top: 21.5%;
-    }
-    /* Fin */
 
     /* On réajuste taille + position du texte d'accueil */
     #texteAccueil {
@@ -801,33 +729,6 @@ nav a {
 
 /* Pour la section "Accueil" */
 
-    /* Réajustement de la position du slider + flêches + texte d'accueil */
-
-    /* Début */
-    #s1:target{
-        height: 136px;
-    }
-
-    #s1:target ~ .prevNext {
-        margin-top: 68px;
-    }
-
-    #s1:target ~ #texteAccueil {
-        margin-top: 16%;
-    }
-
-    #s2:target {
-        height: 136px;
-    }
-
-    #s2:target ~ .prevNext {
-        margin-top: 68px;
-    }
-
-    #s2:target ~ #texteAccueil {
-        margin-top: 16%;
-    }
-    /* Fin */
 
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {
@@ -907,33 +808,6 @@ nav a {
 /* ------------ Gestion affichage Laptop Large ------------ */
 
 @media screen and (min-width: 1440px){
-    /* Réajustement de la position du slider + flêches + texte d'accueil */
-
-    /* Début */
-    #s1:target{
-        height: 136px;
-    }
-
-    #s1:target ~ .prevNext {
-        margin-top: 68px;
-    }
-
-    #s1:target ~ #texteAccueil {
-        margin-top: 11.5%;
-    }
-
-    #s2:target {
-        height: 136px;
-    }
-
-    #s2:target ~ .prevNext {
-        margin-top: 68px;
-    }
-
-    #s2:target ~ #texteAccueil {
-        margin-top: 11.5%;
-    }
-    /* Fin */
 
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {

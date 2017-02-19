@@ -126,132 +126,16 @@ nav a {
 .slideshowGallery {
     position: relative;
     overflow: hidden;
-    height:   auto;
+    height:   0;
     width: 100%;
 }
 
-.slideshowGallery .slider{
-    height:      100%;
-    white-space: nowrap;
-    font-size:   0;
-    transition:  0.8s;
-}
-
-/* On superpose les images */
-.slideshowGallery .slider > *{
-    font-size:       1rem;
-    display:         inline-block;
-    vertical-align:  top;
-    height:          100%;
-    width:           100%;
-    background:      none 50% no-repeat;
-    background-size: cover;
-}
-
-/* On positionne la div contenant les flèches directionnelles */
-.slideshowGallery .prevNext{
-    position: absolute;
-    z-index:  1;
-    top:      50%;
-    width:    110%;
-    height:   0;
-}
-
-/* on cache les flêches par défaut*/
-.slideshowGallery .prevNext > div + div {
+.slider {
     visibility: hidden;
 }
 
-/* On dessine les cercles englobant les flèches */
-.slideshowGallery .prevNext a {
-    background:  #fff;
-    position:    absolute;
-    width:       40px;
-    height:      40px;
-    border-radius: 40px;
-    line-height: 40px;
-    text-align: center;
-    font-size: 2em;
-    opacity:     0.3;
-    text-decoration:   none;
-    transform: translateY(-50%) translateX(-15px);
-    -webkit-transform: translateY(-50%) translateX(-15px);
-    -moz-transform: translateY(-50%) translateX(-15px);
-    -o-transform: translateY(-50%) translateX(-15px);
-    -ms-transform: translateY(-50%) translateX(-15px);
-}
-
-.slideshowGallery .prevNext a:hover {
-    opacity: 1;
-}
-
-/* Positionnement des flêches de chaque côté */
-.slideshowGallery .prevNext a + a {
-    right: 0;
-}
-
-.slideshowGallery > .ancreSlider:target ~ .prevNext > * {
-    visibility:  hidden;
-}
-
-#s1:target ~ .prevNext > *:nth-child(1){
-    visibility: visible;
-}
-
-/* On revient sur la 1ère image */
-#s1:target ~ .slider {
-    transform: translateX(0%);
-    -webkit-transform: translateX(0%);
-    -moz-transform: translateX(0%);
-    -o-transform: translateX(0%);
-    -ms-transform: translateX(0%);
-}
-
-#s2:target ~ .prevNext > *:nth-child(2){
-    visibility: visible;
-}
-
-/* on déplace pour afficher la 2ème image */
-#s2:target ~ .slider {
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    -moz-transform: translateX(-100%);
-    -o-transform: translateX(-100%);
-    -ms-transform: translateX(-100%);
-}
-
-/* Permet d'empêcher le slider de remonter quand on clique sue les flêches */
-
-/* Pour la 1ère image */
-
-/* On donne une hauteur à la div servant d'ancre */
-#s1:target{
-    height: 96px;
-}
-
-/* On décale les flêches*/
-#s1:target ~ .prevNext {
-    margin-top: 48px;
-}
-
-/* On décale le texte */
-#s1:target ~ #texteAccueil {
-    margin-top: 36.5%;
-}
-
-/* Pour la 2ème image */
-
-/* Idem 1ère image */
-#s2:target {
-    height: 96px;
-}
-
-#s2:target ~ .prevNext {
-    margin-top: 48px;
-}
-
-#s2:target ~ #texteAccueil {
-    margin-top: 36.5%;
+.prevNext {
+    visibility: hidden;
 }
 
 /* ------------ Gestion du texte sur le slider ------------ */
@@ -260,14 +144,7 @@ nav a {
 #texteAccueil {
     width: 100%;
     height: auto;
-    position: absolute;
-    top: -15%;
-    left: 0;
-    transform: scale(0.4) translateY(-25%) translateX(-40%);
-    -webkit-transform: scale(0.4) translateY(-25%) translateX(-40%);
-    -moz-transform: scale(0.4) translateY(-25%) translateX(-40%);
-    -o-transform: scale(0.4) translateY(-25%) translateX(-40%);
-    -ms-transform: scale(0.4) translateY(-25%) translateX(-40%);
+    text-align: center;
 }
 
 #texteAccueil h1, h2, h3 {
@@ -280,10 +157,13 @@ nav a {
 }
 
 #texteAccueil h2, h3 {
-    color: white;
+    color: black;
 }
 
 #texteAccueil button {
+    width: 120px;
+    height: 50px;
+    font-size: 1.2em;
     margin-top: 10px;
     background-color: #25adb6;
     color: white;
@@ -301,6 +181,7 @@ nav a {
 
 #services {
     width: 100%;
+    margin-top: 100px;
 }
 
 /* ------------ Gestion du titre ------------ */
@@ -355,6 +236,7 @@ nav a {
 
 #portfolio {
     width: 100%;
+    margin-top: 100px;
     background-color: #f5f5f5;
 }
 
@@ -374,6 +256,7 @@ nav a {
 
 #tabPortfolio {
     width: 100%;
+    visibility: hidden;
     margin-top: 25px;
     margin-bottom: 25px;
 }
@@ -458,7 +341,7 @@ nav a {
     width: 100%;
     height: 75px;
     background-color: rgba(85, 64, 0, 0.7);
-    visibility: hidden;
+    visibility: visible;
 }
 
 /* Alignement et couleur du texte des légendes */
@@ -468,62 +351,6 @@ nav a {
     margin-left: 5px;
 }
 
-/* On affiche la légende correspondant à l'image au survol de celle-ci*/
-.imagePortfolio img:hover + .legendePortfolio {
-    visibility: visible;
-}
-
-/* Affichage des légendes de toutes les images quand on click sur "All Works" */
-#ancreAllWorks:target ~ #imagesPortfolio > * .legendePortfolio {
-    visibility: visible;
-}
-
-/* Affiche de la flèche */
-#ancreAllWorks:target ~ #tabPortfolio a + #flecheAll {
-    visibility: visible;
-}
-
-/* Affichage du cadre autour de la tabulation  */
-#ancreAllWorks:target ~ #tabPortfolio > ul > li > #tab1 {
-    background-color: #25adb6;
-    color: white;
-}
-
-/* Affichage après click sur "Creative" */
-
-/* On affiche les légendes de la classe "creative" */
-#ancreCreative:target ~ #imagesPortfolio > * .creative{
-    visibility: visible;
-}
-
-/* On affiche la flêche sous la tabulation "créative" */
-#ancreCreative:target ~ #tabPortfolio a + #flecheCreative {
-    visibility: visible;
-}
-
-/* On colore la tabulation "créative" */
-#ancreCreative:target ~ #tabPortfolio > ul > li > #tab2 {
-    background-color: #25adb6;
-    color: white;
-}
-
-/* Affichage après click sur "Corporate" */
-
-/* On affiche les légendes de la classe "corporate" */
-#ancreCorporate:target ~#imagesPortfolio > * .corporate {
-    visibility: visible;
-}
-
-/* On affiche la flêche sous la tabulation "corporate" */
-#ancreCorporate:target ~ #tabPortfolio a + #flecheCorporate {
-    visibility: visible;
-}
-
-/* On colore la tabulation "corporate" */
-#ancreCorporate:target ~ #tabPortfolio > ul > li > #tab3 {
-    background-color: #25adb6;
-    color: white;
-}
 
 /*-----------------------------------------------------------------------*/
 
@@ -541,10 +368,10 @@ nav a {
 
 /* ------------ Gestion de la carte ------------ */
 
-#carte img {
+#carte iframe{
     width: 100%;
-    height: auto;
-    margin-top: 15px;
+    height: 0;
+    visibility: hidden;
 }
 
 /* ------------ Gestion du formulaire ------------ */
@@ -586,6 +413,9 @@ nav a {
 }
 
 #btnValider {
+    width: 100px;
+    height: 50px;
+    font-size: 1.2em;
     background-color: #25adb6;
     color: white;
 }
@@ -602,7 +432,148 @@ nav a {
 
 @media screen and (min-width: 768px){
 
-    /* Réajustement de la position du slider + flêches + texte d'accueil */
+    /* ------------ Gestion du slider ------------ */
+
+    .slider {
+        visibility: visible;
+    }
+
+    .prevNext {
+        visibility: visible;
+    }
+
+    .slideshowGallery {
+        position: relative;
+        overflow: hidden;
+        height:   auto;
+        width: 100%;
+    }
+
+    .slideshowGallery .slider{
+        height:      100%;
+        white-space: nowrap;
+        font-size:   0;
+        transition:  0.8s;
+    }
+
+    /* On superpose les images */
+    .slideshowGallery .slider > *{
+        font-size:       1rem;
+        display:         inline-block;
+        vertical-align:  top;
+        height:          100%;
+        width:           100%;
+        background:      none 50% no-repeat;
+        background-size: cover;
+    }
+
+    /* On positionne la div contenant les flèches directionnelles */
+    .slideshowGallery .prevNext{
+        position: absolute;
+        z-index:  1;
+        top:      50%;
+        width:    110%;
+        height:   0;
+    }
+
+    /* on cache les flêches par défaut*/
+    .slideshowGallery .prevNext > div + div {
+        visibility: hidden;
+    }
+
+    /* On dessine les cercles englobant les flèches */
+    .slideshowGallery .prevNext a {
+        background:  #fff;
+        position:    absolute;
+        width:       40px;
+        height:      40px;
+        border-radius: 40px;
+        line-height: 40px;
+        text-align: center;
+        font-size: 2em;
+        opacity:     0.3;
+        text-decoration:   none;
+        transform: translateY(-50%) translateX(-15px);
+        -webkit-transform: translateY(-50%) translateX(-15px);
+        -moz-transform: translateY(-50%) translateX(-15px);
+        -o-transform: translateY(-50%) translateX(-15px);
+        -ms-transform: translateY(-50%) translateX(-15px);
+    }
+
+    .slideshowGallery .prevNext a:hover {
+        opacity: 1;
+    }
+
+    /* Positionnement des flêches de chaque côté */
+    .slideshowGallery .prevNext a + a {
+        right: 0;
+    }
+
+    .slideshowGallery > .ancreSlider:target ~ .prevNext > * {
+        visibility:  hidden;
+    }
+
+    #s1:target ~ .prevNext > *:nth-child(1){
+        visibility: visible;
+    }
+
+    /* On revient sur la 1ère image */
+    #s1:target ~ .slider {
+        transform: translateX(0%);
+        -webkit-transform: translateX(0%);
+        -moz-transform: translateX(0%);
+        -o-transform: translateX(0%);
+        -ms-transform: translateX(0%);
+    }
+
+    #s2:target ~ .prevNext > *:nth-child(2){
+        visibility: visible;
+    }
+
+    /* on déplace pour afficher la 2ème image */
+    #s2:target ~ .slider {
+        transform: translateX(-100%);
+        -webkit-transform: translateX(-100%);
+        -moz-transform: translateX(-100%);
+        -o-transform: translateX(-100%);
+        -ms-transform: translateX(-100%);
+    }
+
+    /* Permet d'empêcher le slider de remonter quand on clique sue les flêches */
+
+    /* Pour la 1ère image */
+
+    /* On donne une hauteur à la div servant d'ancre */
+    #s1:target{
+        height: 96px;
+    }
+
+    /* On décale les flêches*/
+    #s1:target ~ .prevNext {
+        margin-top: 48px;
+    }
+
+    /* On décale le texte */
+    #s1:target ~ #texteAccueil {
+        margin-top: 36.5%;
+    }
+
+    /* Pour la 2ème image */
+
+    /* Idem 1ère image */
+    #s2:target {
+        height: 96px;
+    }
+
+    #s2:target ~ .prevNext {
+        margin-top: 48px;
+    }
+
+    #s2:target ~ #texteAccueil {
+        margin-top: 36.5%;
+    }
+
+        /* Réajustement de la position du slider + flêches + texte d'accueil */
 
     /* Début */
     #ancreAccueil {
@@ -636,17 +607,26 @@ nav a {
 
     /* On réajuste taille + position du texte d'accueil */
     #texteAccueil {
-        transform: scale(0.70) translateY(123%) translateX(-5%);
-        -webkit-transform: scale(0.70) translateY(123%) translateX(-5%);
-        -moz-transform: scale(0.70) translateY(123%) translateX(-5%);
-        -o-transform: scale(0.70) translateY(123%) translateX(-5%);
-        -ms-transform: scale(0.70) translateY(123%) translateX(-5%);
+        text-align: left;
+        transform: scale(0.70) translateY(-200%) translateX(-5%);
+        -webkit-transform: scale(0.70) translateY(-200%) translateX(-5%);
+        -moz-transform: scale(0.70) translateY(-200%) translateX(-5%);
+        -o-transform: scale(0.70) translateY(-200%) translateX(-5%);
+        -ms-transform: scale(0.70) translateY(-200%) translateX(-5%);
+    }
+
+    #texteAccueil h2, h3 {
+        color: white;
     }
 
     /* On repositionne les flèches directionnelles */
     .slideshowGallery .prevNext{
         position: absolute;
         width:    104%;
+    }
+
+    #services {
+        margin-top: 0;
     }
 
     #titreServices p {
@@ -659,6 +639,12 @@ nav a {
 
     #enTetePorofolio p {
         text-align: center;
+    }
+
+    #tabPortfolio {
+        visibility: visible;
+        margin-top: 25px;
+        margin-bottom: 25px;
     }
 
     #imagesPortfolio {
@@ -675,9 +661,76 @@ nav a {
         margin-top: 90px;
     }
 
+    .legendePortfolio {
+        visibility: hidden;
+    }
+
+    /* On affiche la légende correspondant à l'image au survol de celle-ci*/
+    .imagePortfolio:hover > .legendePortfolio {
+        visibility: visible;
+    }
+
+    /* Affichage des légendes de toutes les images quand on click sur "All Works" */
+    #ancreAllWorks:target ~ #imagesPortfolio > * .legendePortfolio {
+        visibility: visible;
+    }
+
+    /* Affiche de la flèche */
+    #ancreAllWorks:target ~ #tabPortfolio a + #flecheAll {
+        visibility: visible;
+    }
+
+    /* Affichage du cadre autour de la tabulation  */
+    #ancreAllWorks:target ~ #tabPortfolio > ul > li > #tab1 {
+        background-color: #25adb6;
+        color: white;
+    }
+
+    /* Affichage après click sur "Creative" */
+
+    /* On affiche les légendes de la classe "creative" */
+    #ancreCreative:target ~ #imagesPortfolio > * .creative{
+        visibility: visible;
+    }
+
+    /* On affiche la flêche sous la tabulation "créative" */
+    #ancreCreative:target ~ #tabPortfolio a + #flecheCreative {
+        visibility: visible;
+    }
+
+    /* On colore la tabulation "créative" */
+    #ancreCreative:target ~ #tabPortfolio > ul > li > #tab2 {
+        background-color: #25adb6;
+        color: white;
+    }
+
+    /* Affichage après click sur "Corporate" */
+
+    /* On affiche les légendes de la classe "corporate" */
+    #ancreCorporate:target ~#imagesPortfolio > * .corporate {
+        visibility: visible;
+    }
+
+    /* On affiche la flêche sous la tabulation "corporate" */
+    #ancreCorporate:target ~ #tabPortfolio a + #flecheCorporate {
+        visibility: visible;
+    }
+
+    /* On colore la tabulation "corporate" */
+    #ancreCorporate:target ~ #tabPortfolio > ul > li > #tab3 {
+        background-color: #25adb6;
+        color: white;
+    }
+
     #contact {
         margin-top: 50px;
         height: 500px;
+    }
+
+    /* On affiche la carte iframe*/
+    #carte iframe{
+        height: 450px;
+        visibility: visible;
     }
 
     /* On repositionne le formulaire */
@@ -686,15 +739,9 @@ nav a {
         position: relative;
     }
 
-    #carte {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
-
     #formulaireContact {
         position: absolute;
-        top: 15px;
+        top: 0;
         left: 60%;
         width: 30%;
         height: 80%;
@@ -785,11 +832,11 @@ nav a {
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {
         width: 90%;
-        transform: scale(0.90) translateY(145%) translateX(5%);
-        -webkit-transform: scale(0.90) translateY(145%) translateX(5%);
-        -moz-transform: scale(0.90) translateY(145%) translateX(5%);
-        -o-transform: scale(0.90) translateY(145%) translateX(5%);
-        -ms-transform: scale(0.90) translateY(145%) translateX(5%);
+        transform: scale(0.90) translateY(-180%) translateX(5%);
+        -webkit-transform: scale(0.90) translateY(-180%) translateX(5%);
+        -moz-transform: scale(0.90) translateY(-180%) translateX(5%);
+        -o-transform: scale(0.90) translateY(-180%) translateX(5%);
+        -ms-transform: scale(0.90) translateY(-180%) translateX(5%);
     }
 
     /* On repositionne la flèche de droite */
@@ -847,18 +894,13 @@ nav a {
         position: relative;
     }
 
-    #carte {
-        position: relative;
-        width: 100%;
-        height: auto;
-    }
 
     #formulaireContact {
         position: absolute;
-        top: 15px;
+        top: 0;
         left: 60%;
         width: 25%;
-        height: 80%;
+        height: 85%;
     }
 }
 
@@ -896,11 +938,11 @@ nav a {
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {
         width: 90%;
-        transform: translateY(202%) translateX(10%);
-        -webkit-transform: translateY(202%) translateX(10%);
-        -moz-transform: translateY(202%) translateX(10%);
-        -o-transform: translateY(202%) translateX(10%);
-        -ms-transform: translateY(202%) translateX(10%);
+        transform: translateY(-200%) translateX(10%);
+        -webkit-transform: translateY(-200%) translateX(10%);
+        -moz-transform: translateY(-200%) translateX(10%);
+        -o-transform: translateY(-200%) translateX(10%);
+        -ms-transform: translateY(-200%) translateX(10%);
     }
 
     /*Ecartement des flêches */
@@ -951,16 +993,12 @@ nav a {
         height: auto;
     }
 
-    #carte img {
-        margin-top: 0;
-    }
-
     #formulaireContact {
         position: absolute;
         top: 0;
         left: 60%;
         width: 20%;
-        height: 80%;
+        height: 85%;
     }
 }
 

@@ -2,15 +2,18 @@
 
 /*
 
-- Line 23 :     Page entière
-- Line 61 :     Header
-- Line 120 :    Section "Accueil"
-- Line 260 :    Section "Services"
-- Line 349 :    Section "Portfolio"
-- Line 526 :    Section "Contact"
-- Line 591 :    Media Queries
+- Line 27 :     Page entière
+- Line 72 :     Header
+- Line 133 :    Section "Accueil"
+- Line 199 :    Section "Services"
+- Line 260 :    Section "Portfolio"
+- Line 336 :    Section "Contact"
+- Line 403 :    Media Queries : 768px
+- Line 718 :    Media Queries : 1024px
+- Line 851 :    Media Queries : 1440px
 
 */
+
 
 
 /*-----------------------------------------------------------------------*/
@@ -18,6 +21,7 @@
                             /* PAGE ENTIERE */
 
 /*-----------------------------------------------------------------------*/
+
 
 
 body {
@@ -48,12 +52,19 @@ body {
     height: 96px;
 }
 
+/* On cache les checkbox servant pour le slider + portfolio*/
+input[type=checkbox] {
+    display: none;
+}
+
+
 
 /*-----------------------------------------------------------------------*/
 
                             /* HEADER */
 
 /*-----------------------------------------------------------------------*/
+
 
 
 /* ------------ Général ------------ */
@@ -70,11 +81,13 @@ header {
 
 /* ------------ Gestion du logo ------------ */
 
+/* On centre le logo*/
 #logo {
     text-align: center;
     margin-top: 10px;
 }
 
+/* On ajuste la taille du logo*/
 #logo img {
     width: 40%;
     height: auto;
@@ -108,11 +121,13 @@ nav a {
 }
 
 
+
 /*-----------------------------------------------------------------------*/
 
                         /* SECTION ACCUEIL */
 
 /*-----------------------------------------------------------------------*/
+
 
 
 /* ------------ Général ------------ */
@@ -170,6 +185,7 @@ nav a {
 }
 
 
+
 /*-----------------------------------------------------------------------*/
 
                         /* SECTION SERVICES */
@@ -177,11 +193,15 @@ nav a {
 /*-----------------------------------------------------------------------*/
 
 
+
 /* ------------ Général ------------ */
 
 #services {
     width: 100%;
-    margin-top: 100px;
+}
+
+#ancreService {
+    margin-bottom: 130px;
 }
 
 /* ------------ Gestion du titre ------------ */
@@ -225,11 +245,14 @@ nav a {
     text-align: justify;
 }
 
+
+
 /*-----------------------------------------------------------------------*/
 
                         /* SECTION PORTFOLIO */
 
 /*-----------------------------------------------------------------------*/
+
 
 
 /* ------------ Général ------------ */
@@ -252,64 +275,11 @@ nav a {
     padding-top: 5px;
 }
 
-/* ------------ Gestion du bandeau de tabulation ------------ */
-
 #tabPortfolio {
-    width: 100%;
-    visibility: hidden;
-    margin-top: 25px;
-    margin-bottom: 25px;
+    display: none;
 }
 
-#tabPortfolio ul {
-    padding-left: 0;
-    margin: 0;
-    list-style-type: none;
-}
 
-#tabPortfolio li {
-    display: inline-block;
-    height: 40px;
-    width: 70px;
-    position: relative;
-}
-
-#tabPortfolio a {
-    display: block;
-    text-decoration: none;
-    height: 40px;
-    padding-top: 25%;
-}
-
-#tabPortfolio a:hover {
-    background-color: #25adb6;
-    color: white;
-}
-
-/*On dessine les flêches des tabulations et on les masque par défaut*/
-.fleche {
-    position: relative;
-    top: 14px;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 15px solid #25adb6;
-    visibility: hidden;
-}
-
-/* On affiche la flèche correspondant à la tabulation */
-#tabPortfolio a:hover + #flecheAll {
-    visibility: visible;
-}
-
-/* idem */
-#tabPortfolio a:hover + #flecheCreative {
-    visibility: visible;
-}
-
-/* idem */
-#tabPortfolio a:hover + #flecheCorporate {
-    visibility: visible;
-}
 
 /* ------------ Gestion des images du portfolio ------------ */
 
@@ -352,11 +322,13 @@ nav a {
 }
 
 
+
 /*-----------------------------------------------------------------------*/
 
                         /* SECTION CONTACT */
 
 /*-----------------------------------------------------------------------*/
+
 
 
 /* ------------ Général ------------ */
@@ -369,9 +341,7 @@ nav a {
 /* ------------ Gestion de la carte ------------ */
 
 #carte iframe{
-    width: 100%;
-    height: 0;
-    visibility: hidden;
+    display: none;
 }
 
 /* ------------ Gestion du formulaire ------------ */
@@ -421,16 +391,20 @@ nav a {
 }
 
 
-/*-----------------------------------------------------------------------*/
-
-                    /* MEDIA QUERIES : GESTION RESPONSIVE */
 
 /*-----------------------------------------------------------------------*/
 
+             /* MEDIA QUERIES : Gestion affichage Tablette */
 
-/* ------------ Gestion affichage Tablette ------------ */
+/*-----------------------------------------------------------------------*/
+
+
 
 @media screen and (min-width: 768px){
+
+    #accueil {
+        height: 250px;
+    }
 
     /* ------------ Gestion du slider ------------ */
 
@@ -513,10 +487,6 @@ nav a {
         visibility:  hidden;
     }
 
-    #btn {
-        display: none;
-    }
-
     input[type=checkbox]:checked ~ .slider {
         transform: translateX(-100%);
         -webkit-transform: translateX(-100%);
@@ -526,8 +496,7 @@ nav a {
     }
 
 
-
-    /* Réajustement de la position du slider + flêches + texte d'accueil */
+    /* Réajustement de la position du texte d'accueil */
 
     #ancreAccueil {
         height: 135px;
@@ -569,10 +538,64 @@ nav a {
         text-align: center;
     }
 
+
+   /* ------------ Gestion du bandeau de tabulation ------------ */
+
     #tabPortfolio {
-        visibility: visible;
+        width: 100%;
+        display: block;
         margin-top: 25px;
         margin-bottom: 25px;
+    }
+
+    #tabPortfolio ul {
+        padding-left: 0;
+        margin: 0;
+        list-style-type: none;
+    }
+
+    #tabPortfolio li {
+        display: inline-block;
+        height: 40px;
+        width: 70px;
+        position: relative;
+    }
+
+    #tabPortfolio label {
+        display: block;
+        text-decoration: none;
+        height: 40px;
+        padding-top: 25%;
+    }
+
+    #tabPortfolio label:hover {
+        background-color: #25adb6;
+        color: white;
+    }
+
+    /*On dessine les flêches des tabulations et on les masque par défaut*/
+    .fleche {
+        position: relative;
+        top: 14px;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid #25adb6;
+        visibility: hidden;
+    }
+
+    /* On affiche la flèche correspondant à la tabulation */
+    #tabPortfolio label:hover + #flecheAll {
+        visibility: visible;
+    }
+
+    /* idem */
+    #tabPortfolio label:hover + #flecheCreative {
+        visibility: visible;
+    }
+
+    /* idem */
+    #tabPortfolio label:hover + #flecheCorporate {
+        visibility: visible;
     }
 
     #imagesPortfolio {
@@ -599,53 +622,51 @@ nav a {
     }
 
     /* Affichage des légendes de toutes les images quand on click sur "All Works" */
-    #ancreAllWorks:target ~ #imagesPortfolio > * .legendePortfolio {
+    input[id=all]:checked ~ #imagesPortfolio > * .legendePortfolio {
         visibility: visible;
     }
 
-    /* Affiche de la flèche */
-    #ancreAllWorks:target ~ #tabPortfolio a + #flecheAll {
+    input[id=all]:checked ~ #tabPortfolio label + #flecheAll {
         visibility: visible;
     }
 
-    /* Affichage du cadre autour de la tabulation  */
-    #ancreAllWorks:target ~ #tabPortfolio > ul > li > #tab1 {
+    input[id=all]:checked ~ #tabPortfolio > ul > li > #labelAll {
         background-color: #25adb6;
         color: white;
     }
 
-    /* Affichage après click sur "Creative" */
+/* Affichage après click sur "Creative" */
 
     /* On affiche les légendes de la classe "creative" */
-    #ancreCreative:target ~ #imagesPortfolio > * .creative{
+    input[id=creative]:checked ~ #imagesPortfolio > * .creative {
         visibility: visible;
     }
 
     /* On affiche la flêche sous la tabulation "créative" */
-    #ancreCreative:target ~ #tabPortfolio a + #flecheCreative {
+    input[id=creative]:checked ~ #tabPortfolio label + #flecheCreative {
         visibility: visible;
     }
 
     /* On colore la tabulation "créative" */
-    #ancreCreative:target ~ #tabPortfolio > ul > li > #tab2 {
+    input[id=creative]:checked ~ #tabPortfolio > ul > li > #labelCreative {
         background-color: #25adb6;
         color: white;
     }
 
-    /* Affichage après click sur "Corporate" */
+/* Affichage après click sur "Corporate" */
 
     /* On affiche les légendes de la classe "corporate" */
-    #ancreCorporate:target ~#imagesPortfolio > * .corporate {
+    input[id=corporate]:checked ~ #imagesPortfolio > * .corporate{
         visibility: visible;
     }
 
     /* On affiche la flêche sous la tabulation "corporate" */
-    #ancreCorporate:target ~ #tabPortfolio a + #flecheCorporate {
+    input[id=corporate]:checked ~ #tabPortfolio label + #flecheCorporate {
         visibility: visible;
     }
 
     /* On colore la tabulation "corporate" */
-    #ancreCorporate:target ~ #tabPortfolio > ul > li > #tab3 {
+    input[id=corporate]:checked ~ #tabPortfolio > ul > li > #labelCorporate {
         background-color: #25adb6;
         color: white;
     }
@@ -657,8 +678,9 @@ nav a {
 
     /* On affiche la carte iframe*/
     #carte iframe{
+        width: 100%;
         height: 450px;
-        visibility: visible;
+        display: block;
     }
 
     /* On repositionne le formulaire */
@@ -683,7 +705,15 @@ nav a {
     }
 }
 
-/* ------------ Gestion affichage Laptop ------------ */
+
+
+/*-----------------------------------------------------------------------*/
+
+        /* MEDIA QUERIES : Gestion affichage Laptop 1024px */
+
+/*-----------------------------------------------------------------------*/
+
+
 
 @media screen and (min-width: 1024px){
 
@@ -729,6 +759,9 @@ nav a {
 
 /* Pour la section "Accueil" */
 
+    #accueil {
+        height: 300px;
+    }
 
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {
@@ -805,9 +838,21 @@ nav a {
     }
 }
 
-/* ------------ Gestion affichage Laptop Large ------------ */
+
+
+/*-----------------------------------------------------------------------*/
+
+        /* MEDIA QUERIES : Gestion affichage Laptop 1440px */
+
+/*-----------------------------------------------------------------------*/
+
+
 
 @media screen and (min-width: 1440px){
+
+    #accueil {
+        height: 440px;
+    }
 
     /* On ré-ajuste taille et position du texte */
     #texteAccueil {

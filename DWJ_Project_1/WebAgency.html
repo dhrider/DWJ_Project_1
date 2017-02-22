@@ -21,7 +21,7 @@
                  <nav>
                     <ul>
                         <li><a href="#ancreAccueil">Accueil</a></li>
-                        <li><a href="#texteAccueil">Services</a></li>
+                        <li><a href="#ancreService">Services</a></li>
                         <li><a href="#ancrePortfolio">Portfolio</a></li>
                         <li><a href="#ancreContact">Contact</a></li>
                     </ul>
@@ -59,6 +59,8 @@
 
 
                 </section>
+
+                <div id="ancreService"></div>
 
                 <section id="services">
 
@@ -102,7 +104,7 @@
                                 <div class="serv">
                                     <h1>UI Design</h1>
                                     <p>
-                                        L'interface utilisateur est un point essentsiel dans le succès d'un site.
+                                        L'interface utilisateur est un point essentiel dans le succès d'un site.
                                         Il est donc essentiel de fournir une navigation la plus aisée et agréable
                                         possible.
                                         <br/>
@@ -135,9 +137,9 @@
 
                 <section id="portfolio">
 
-                    <s id="ancreAllWorks"></s>
-                    <s id="ancreCreative"></s>
-                    <s id="ancreCorporate"></s>
+                    <input type="checkbox" id="all">
+                    <input type="checkbox" id="creative">
+                    <input type="checkbox" id="corporate">
 
                     <div id="enTetePorofolio">
                         <h1>NOS PROJETS</h1>
@@ -151,15 +153,15 @@
                     <div id="tabPortfolio">
                         <ul>
                             <li>
-                                <a id="tab1" href="#ancreAllWorks">All works</a>
+                                <label for="all" id="labelAll">All works</label>
                                 <span id="flecheAll" class="fleche"></span>
                             </li>
                             <li>
-                                <a id="tab2" href="#ancreCreative">Creative</a>
+                                <label for="creative" id="labelCreative">Creative</label>
                                 <span id="flecheCreative" class="fleche"></span>
                             </li>
                             <li>
-                                <a id="tab3" href="#ancreCorporate">Corporate</a>
+                                <label for="corporate" id="labelCorporate">Corporate</label>
                                 <span id="flecheCorporate" class="fleche"></span>
                             </li>
                         </ul>

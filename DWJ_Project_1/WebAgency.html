@@ -10,7 +10,7 @@
 
     <body>
 
-        <div id="page">
+        <div itemscope itemtype="https://schema.org/Organization" id="page">
 
             <header id="menu">
 
@@ -21,9 +21,9 @@
                  <nav>
                     <ul>
                         <li><a href="#ancreAccueil">Accueil</a></li>
-                        <li><a href="#ancreService">Services</a></li>
+                        <li><a href="#ancreService"><span itemprop="makesOffer">Services</span></a></li>
                         <li><a href="#ancrePortfolio">Portfolio</a></li>
-                        <li><a href="#ancreContact">Contact</a></li>
+                        <li><a href="#ancreContact"><span itemprop="contactPoint">Contact</span></a></li>
                     </ul>
                  </nav>
 
@@ -51,7 +51,7 @@
                     </div>
 
                     <div id="texteAccueil">
-                        <h1>WEB AGENCY :</h1>
+                        <h1><span itemprop="brand"> WEB AGENCY :</span></h1>
                         <h2>L'AGENCE DE TOUS VOS PROJETS !</h2>
                         <h3>Vous avez un projet web ? La WEB AGENCY vous aide à le réaliser.</h3>
                         <button class="btn btn-primary">Plus d'infos</button>
@@ -69,12 +69,12 @@
                         <div class="rond"></div>
                         <p>
                             Notre expérience de plus de 10 ans dans les domaines du web grâce à notre
-                            équipe de spécialistes en <strong>développement</strong> et <strong>design</strong>,
+                            équipe de spécialistes en <span itemprop="makesOffer">développement</span> et <span itemprop="makesOffer">design</span>,
                             nous permet de proposer un large choix de solutions.
                             <br/>
                             Quelles soient clé en mains ou à votre image, nous vous accompagnerons tout au long du
-                            processus de <strong>création</strong>, de validation, de mise en place et de
-                            <strong>maintenance</strong> de votre projet web.
+                            processus de <span itemprop="makesOffer">création</span>, de validation, de mise en place et de
+                            <span itemprop="makesOffer">maintenance</span> de votre projet web.
                         </p>
                     </div>
 
@@ -88,7 +88,7 @@
                             <div id="service1">
                                 <img src="images/UX%20Design.png" alt="dessin UX">
                                 <div class="serv">
-                                    <h1>UX Design</h1>
+                                    <h1><span itemprop="makesOffer">UX Design</span></h1>
                                     <p>
                                         Chaque site web est différent et peut vite devenir complexe en fonction des
                                         visiteurs qui navigueront sur votre site.
@@ -102,7 +102,7 @@
                             <div id="service2">
                                 <img src="images/UI%20Design.png" alt="dessin UI">
                                 <div class="serv">
-                                    <h1>UI Design</h1>
+                                    <h1><span itemprop="makesOffer">UI Design</span></h1>
                                     <p>
                                         L'interface utilisateur est un point essentiel dans le succès d'un site.
                                         Il est donc essentiel de fournir une navigation la plus aisée et agréable
@@ -116,7 +116,7 @@
                             <div id="service3">
                                 <img src="images/SEO.png" alt="dessin SEO">
                                 <div class="serv">
-                                    <h1>SEO</h1>
+                                    <h1><span itemprop="makesOffer">SEO</span></h1>
                                     <p id="ancrePortfolio">
                                         Même en ayant "le meilleur" ou "le plus beau" site, s'il se retrouve
                                         noyé dans la masse, il deviendra vite "invisible" face à votre panel
@@ -142,7 +142,7 @@
                     <input type="checkbox" id="corporate">
 
                     <div id="enTetePorofolio">
-                        <h1>NOS PROJETS</h1>
+                        <h1><span itemprop="review">NOS PROJETS</span></h1>
                         <div class="rond"></div>
                         <p>
                             Vous trouverez ici quelques projets très diversifiés que nous avons réalisé
@@ -247,7 +247,7 @@
                         <div id="detailFormulaire">
                             <h1>Contact Info</h1>
 
-                            <div id="adresse">
+                            <div itemprop="address" id="adresse">
                                 <p><strong>WebAgency SAS</strong></p>
                                 <p>5 rue d'Hauteville 75010 Paris</p>
                                 <p>Tél : 01 02 03 04 05</p>

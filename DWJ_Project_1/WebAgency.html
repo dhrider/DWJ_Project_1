@@ -5,6 +5,7 @@
         <meta name="description" content="WebAgency">
         <meta name="viewport" content="width=device-width" />
         <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>WEB AGENCY</title>
     </head>
 
@@ -66,7 +67,11 @@
 
                     <div id="titreServices">
                         <h1>NOS SERVICES</h1>
-                        <div class="rond"></div>
+                        <div class="separationTitre">
+                            <div class="traitRond traitRondLeft"></div>
+                            <div class="rond"></div>
+                            <div class="traitRond"></div>
+                        </div>
                         <p>
                             Notre expérience de plus de 10 ans dans les domaines du web grâce à notre
                             équipe de spécialistes en <span itemprop="makesOffer">développement</span> et <span itemprop="makesOffer">design</span>,
@@ -86,7 +91,7 @@
 
                         <div id="detailServices">
                             <div id="service1">
-                                <img src="images/UX%20Design.png" alt="dessin UX">
+                                <img class="imageService" src="images/UX%20Design.png" alt="dessin UX">
                                 <div class="serv">
                                     <h1><span itemprop="makesOffer">UX Design</span></h1>
                                     <p>
@@ -100,7 +105,7 @@
                             </div>
 
                             <div id="service2">
-                                <img src="images/UI%20Design.png" alt="dessin UI">
+                                <img class="imageService" src="images/UI%20Design.png" alt="dessin UI">
                                 <div class="serv">
                                     <h1><span itemprop="makesOffer">UI Design</span></h1>
                                     <p>
@@ -114,7 +119,7 @@
                             </div>
 
                             <div id="service3">
-                                <img src="images/SEO.png" alt="dessin SEO">
+                                <img class="imageService" src="images/SEO.png" alt="dessin SEO">
                                 <div class="serv">
                                     <h1><span itemprop="makesOffer">SEO</span></h1>
                                     <p id="ancrePortfolio">
@@ -137,13 +142,17 @@
 
                 <section id="portfolio">
 
-                    <input type="checkbox" id="all">
+                    <input type="checkbox" id="all" checked="checked">
                     <input type="checkbox" id="creative">
                     <input type="checkbox" id="corporate">
 
                     <div id="enTetePorofolio">
                         <h1><span itemprop="review">NOS PROJETS</span></h1>
-                        <div class="rond"></div>
+                        <div class="separationTitre">
+                            <div class="traitRond traitRondLeft"></div>
+                            <div class="rond"></div>
+                            <div class="traitRond"></div>
+                        </div>
                         <p>
                             Vous trouverez ici quelques projets très diversifiés que nous avons réalisé
                             pour nos clients.
@@ -169,64 +178,96 @@
 
                     <div id="imagesPortfolio">
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/01.jpg" alt="image_portfolio_1">
+                            <img src="images/portfolio/01.jpg" alt="image_Optique_Decalee">
                             <div class="legendePortfolio creative">
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
                                 <h2>L'Optique Décalée</h2>
                                 <p>Le site web pour vos lunettes les plus fun.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/02.jpg" alt="image_portfolio_2">
+                            <img src="images/portfolio/02.jpg" alt="image_Deguisement">
                             <div class="legendePortfolio creative">
-                                <h2>Le déguisement de demain</h2>
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
+                                <h2>Le Déguisement !</h2>
                                 <p>Tous les déguisements pour vos fêtes ou soirées.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/03.jpg" alt="image_portfolio_3">
+                            <img src="images/portfolio/03.jpg" alt="image_Robes_Royales">
                             <div class="legendePortfolio creative">
-                                <h2>Les robes de la Reine</h2>
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
+                                <h2>Les Robes Royales</h2>
                                 <p>Toutes nos collections de vêtements pour femme.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/04.jpg" alt="image_portfolio_4">
+                            <img src="images/portfolio/04.jpg" alt="image_OrganigramTouch">
                             <div class="legendePortfolio corporate">
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
                                 <h2>OrganigramTouch</h2>
                                 <p>Spécialiste dans la gestion de production.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/05.jpg" alt="image_portfolio_5">
+                            <img src="images/portfolio/05.jpg" alt="image_SimplyDrive">
                             <div class="legendePortfolio corporate">
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
                                 <h2>Simply Drive</h2>
                                 <p>La nouvelle façon de faire vos courses.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/06.jpg" alt="image_portfolio_6">
+                            <img src="images/portfolio/06.jpg" alt="image_1000_Merveilles">
                             <div class="legendePortfolio corporate">
-                                <h2>Les milles merveilles</h2>
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
+                                <h2>Les 1000 merveilles</h2>
                                 <p>Agence de voyage de luxe.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/07.jpg" alt="image_portfolio_7">
+                            <img src="images/portfolio/07.jpg" alt="image_Artifices">
                             <div class="legendePortfolio creative">
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
                                 <h2>Artifices</h2>
                                 <p>Le feu d'artifice en folie.</p>
                             </div>
                         </div>
 
                         <div class="imagePortfolio">
-                            <img src="images/portfolio/08.jpg" alt="image_portfolio_8">
+                            <img src="images/portfolio/08.jpg" alt="image_Burotica">
                             <div class="legendePortfolio corporate">
+                                <div class="rondEye">
+                                    <div class="fa fa-eye" aria-hidden="true"></div>
+                                    <div class="rondEyeExt"></div>
+                                </div>
                                 <h2>Burotica</h2>
                                 <p>Toute la bureautique pour les pros.</p>
                             </div>

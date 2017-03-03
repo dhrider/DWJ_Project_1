@@ -22,7 +22,9 @@
 
 /*-----------------------------------------------------------------------*/
 
-
+p, a, h1, h2, h3, button, label, form {
+    font-family: "Arial", sans-serif;
+}
 
 body {
     width: 100%;
@@ -36,15 +38,62 @@ body {
 }
 
 /* définition des ronds bleus pour les titres des sections */
+.separationTitre {
+    display: flex;
+    width: 100%;
+}
+
 .rond {
-    width: 15px;
+    width: 4.8%;
     height: 15px;
     background-color: #25adb6;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left: 1%;
+    margin-right: 1%;
     -moz-border-radius: 15px;
     -webkit-border-radius: 15px;
     border-radius: 15px;
+}
+
+.traitRond {
+    width: 30%;
+    height: 2px;
+    margin-top: 7px;
+    border-top: 1px solid #9B9B9B;
+}
+
+.traitRondLeft {
+    margin-left: 17%;
+}
+
+/* fontawesome*/
+.fa-eye {
+    position: absolute;
+    top: 17%;
+    left: 18%;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+}
+
+.rondEye {
+    position: absolute;
+    top: -18%;
+    left: 84%;
+    width: 25px;
+    height: 25px;
+    background-color: #25adb6;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+}
+
+.rondEyeExt {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 24px;
+    border: 1px solid white;
 }
 
 /* Permet de décaler la section "Accueil" pour ne pas être masquée par le menu fixe */
@@ -112,7 +161,7 @@ nav li {
 }
 
 nav li:hover {
-    border-bottom: 3px solid #25adb6;
+    border-top: 3px solid #25adb6;
 }
 
 nav a {
@@ -228,11 +277,11 @@ nav a {
 
 #detailServices img {
     height: 100%;
-    transform: scale(0.30);
-    -webkit-transform: scale(0.30);
-    -moz-transform: scale(0.30);
-    -o-transform: scale(0.30);
-    -ms-transform: scale(0.30);
+    transform: scale(0.50);
+    -webkit-transform: scale(0.50);
+    -moz-transform: scale(0.50);
+    -o-transform: scale(0.50);
+    -ms-transform: scale(0.50);
 }
 
 /* ------------ Gestion du contenu ------------ */
@@ -306,10 +355,11 @@ nav a {
 /* Positionnement des légendes au bord inférieur des images */
 .legendePortfolio {
     position: absolute;
-    bottom: 0;
+    bottom: 3px;
     left: 0;
     width: 100%;
     height: 75px;
+
     background-color: rgba(85, 64, 0, 0.7);
     visibility: visible;
 }
@@ -319,6 +369,10 @@ nav a {
     text-align: left;
     color: white;
     margin-left: 5px;
+}
+
+.legendePortfolio p {
+    margin-top: 10px;
 }
 
 
@@ -401,6 +455,14 @@ nav a {
 
 
 @media screen and (min-width: 768px){
+
+    .rond {
+        width: 2%;
+    }
+
+    .traitRondLeft {
+        margin-left: 18%;
+    }
 
     #accueil {
         height: 250px;
@@ -542,10 +604,15 @@ nav a {
    /* ------------ Gestion du bandeau de tabulation ------------ */
 
     #tabPortfolio {
-        width: 100%;
+        width: 220px;
+        height: 40px;
         display: block;
         margin-top: 25px;
         margin-bottom: 25px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #C6C6C6;
+        border-radius: 5px;
     }
 
     #tabPortfolio ul {
@@ -561,12 +628,16 @@ nav a {
         position: relative;
     }
 
+
+
     #tabPortfolio label {
         display: block;
         text-decoration: none;
         height: 40px;
-        padding-top: 25%;
+        line-height: 40px;
+        border-radius: 5px;
     }
+
 
     #tabPortfolio label:hover {
         background-color: #25adb6;
@@ -717,6 +788,14 @@ nav a {
 
 @media screen and (min-width: 1024px){
 
+    .rond {
+        width: 1.5%;
+    }
+
+    .traitRondLeft {
+        margin-left: 19%;
+    }
+
 /* Pour le menu */
 
     /* On affiche logo et menu sur une seule ligne */
@@ -736,7 +815,6 @@ nav a {
     }
 
     #logoImage {
-        margin-top: 20px;
         margin-left: 15px;
     }
 
@@ -752,9 +830,9 @@ nav a {
     }
 
     nav li {
-        height: 17px;
+        height: 75px;
+        line-height: 75px;
         margin-right: 20px;
-        margin-top: 50px;
     }
 
 /* Pour la section "Accueil" */
@@ -800,6 +878,10 @@ nav a {
         display: flex;
     }
 
+    .imageService {
+        margin-top: 20px;
+    }
+
     #portfolio {
         margin-top: 30px;
     }
@@ -816,6 +898,15 @@ nav a {
 
     #imagesPortfolio {
         text-align: center;
+    }
+
+    .legendePortfolio {
+        font-size: 0.85em;
+    }
+
+    .fa-eye {
+        top: 25%;
+        left: 25%;
     }
 
     /* On dispose les images => 4 par ligne */
@@ -849,6 +940,14 @@ nav a {
 
 
 @media screen and (min-width: 1440px){
+
+    .rond {
+        width: 1%;
+    }
+
+    .traitRondLeft {
+        margin-left: 18%;
+    }
 
     #accueil {
         height: 440px;

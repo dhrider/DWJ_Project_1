@@ -108,7 +108,6 @@ input[type=checkbox] {
 }
 
 
-
 /*-----------------------------------------------------------------------*/
 
                             /* HEADER */
@@ -274,10 +273,13 @@ nav a {
     width: 100%;
 }
 
+
+
 /* ------------ Gestion des icônes ------------ */
 
 #detailServices img {
-    height: 100%;
+    min-height: 0;
+    min-width: 0;
     transform: scale(0.50);
     -webkit-transform: scale(0.50);
     -moz-transform: scale(0.50);
@@ -601,7 +603,7 @@ nav a {
    /* ------------ Gestion du bandeau de tabulation ------------ */
 
     #tabPortfolio {
-        width: 220px;
+        width: 293px;
         height: 40px;
         display: block;
         margin-top: 25px;
@@ -667,6 +669,11 @@ nav a {
 
     /* idem */
     #tabPortfolio label:hover + #flecheCorporate {
+        visibility: visible;
+    }
+
+    /* idem */
+    #tabPortfolio label:hover + #flechePortfolio {
         visibility: visible;
     }
 
@@ -748,6 +755,28 @@ nav a {
 
     /* On colore la tabulation "corporate" */
     input[id=corporate]:checked ~ #tabPortfolio > ul > li > #labelCorporate {
+        background-color: #25adb6;
+        color: white;
+        height: 34px;
+        line-height: 34px;
+        border-bottom: 3px solid #01777D;
+        border-top: 3px solid #25adb6;
+    }
+
+    /* Affichage après click sur "Portfolio" */
+
+    /* On affiche les légendes de la classe "Portfolio" */
+    input[id=portfolioTab]:checked ~ #imagesPortfolio > * .portfolio{
+        visibility: visible;
+    }
+
+    /* On affiche la flêche sous la tabulation "Portfolio" */
+    input[id=portfolioTab]:checked ~ #tabPortfolio label + #flechePortfolio {
+        visibility: visible;
+    }
+
+    /* On colore la tabulation "Portfolio" */
+    input[id=portfolioTab]:checked ~ #tabPortfolio > ul > li > #labelPortfolio {
         background-color: #25adb6;
         color: white;
         height: 34px;

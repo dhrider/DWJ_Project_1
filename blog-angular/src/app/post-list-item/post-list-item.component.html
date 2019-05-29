@@ -1,0 +1,19 @@
+<div class="container border" [ngClass]="{'list-group-item': true,
+                                          'list-group-item-success': postLoveIts > 0,
+                                          'list-group-item-danger': postLoveIts < 0}">
+  <div class="row justify-content-between">
+    <h2 class="col-xs-6" [ngStyle]="{color: getTextColor()}">{{ postTitle }}</h2>
+    <p class="col-xs-6" [ngStyle]="{color: getTextColor()}">{{ postDate | date: 'short' | uppercase }}</p>
+  </div>
+  <div class="row">
+    <p [ngStyle]="{color: getTextColor()}">{{ postContent }}</p>
+  </div>
+  <div class="row">
+    <div [ngStyle]="{color: getTextColor()}">Love : {{ postLoveIts }}</div>
+  </div>
+  <div class="row d-flex">
+    <button class="btn btn-success" (click)="like()">Like</button>
+    <button class="btn btn-danger" (click)="dislike()">Dislike</button>
+  </div>
+</div>
+
